@@ -1,5 +1,7 @@
 #include "mytcpserver.h"
 #include <QDebug>
+#include <QString>
+#include <QStringList>
 #include <QCoreApplication>
 
 MyTcpServer::~MyTcpServer()
@@ -30,10 +32,24 @@ void MyTcpServer::slotNewConnection(){
 }
 
 void MyTcpServer::slotServerRead(){
+    QString res = "";
     while(mTcpSocket->bytesAvailable()>0)
     {
         QByteArray array =mTcpSocket->readAll();
-        mTcpSocket->write(array);
+        res.append(array);
+    }
+    QStringList list = res.split("&", Qt::SkipEmptyParts);
+    int r = list.size();
+    mTcpSocket->write(" ");
+    if (r >= 2) {
+        QString login = list.at(0);
+        QString password = list.at(1);
+        mTcpSocket->write(login.toUtf8());
+        mTcpSocket->write(" ");
+        mTcpSocket->write(password.toUtf8());
+    }
+    else {
+        mTcpSocket->write(res.toUtf8());
     }
 }
 
