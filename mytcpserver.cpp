@@ -1,4 +1,6 @@
 #include "mytcpserver.h"
+#include "myfunctions.h"
+#include "myfunctions.cpp"
 #include <QDebug>
 #include <QString>
 #include <QStringList>
@@ -38,19 +40,7 @@ void MyTcpServer::slotServerRead(){
         QByteArray array =mTcpSocket->readAll();
         res.append(array);
     }
-    QStringList list = res.split("&", Qt::SkipEmptyParts);
-    int r = list.size();
-    mTcpSocket->write(" ");
-    if (r >= 2) {
-        QString login = list.at(0);
-        QString password = list.at(1);
-        mTcpSocket->write(login.toUtf8());
-        mTcpSocket->write(" ");
-        mTcpSocket->write(password.toUtf8());
-    }
-    else {
-        mTcpSocket->write(res.toUtf8());
-    }
+    mTcpSocket->write(parsing(res).toUtf8());
 }
 
 void MyTcpServer::slotClientDisconnected(){
