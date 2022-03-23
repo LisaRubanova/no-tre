@@ -51,7 +51,7 @@ void MyTcpServer::slotServerRead(){
 }
 
 void MyTcpServer::slotClientDisconnected(){
-   // mTcpSocket->close();
+    mTcpSocket->close();
     QTcpSocket* mTcpSocket = (QTcpSocket*)sender();
     list.removeAt(list.indexOf(mTcpSocket));
 }
