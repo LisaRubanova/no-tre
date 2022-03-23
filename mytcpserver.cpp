@@ -51,7 +51,9 @@ void MyTcpServer::slotServerRead(){
 }
 
 void MyTcpServer::slotClientDisconnected(){
+	qDebug() << list.size(); //приколюха выводит число активных соединений 
     mTcpSocket->close();
     QTcpSocket* mTcpSocket = (QTcpSocket*)sender();
     list.removeAt(list.indexOf(mTcpSocket));
+	qDebug() << list.size(); //тут тоже выводит, стузику интересно посмотреть как это выглядит
 }
