@@ -1,6 +1,12 @@
 #include "mytcpserver.h"
+#include "myfunctions.h"
+#include "myfunctions.cpp"
 #include <QDebug>
+#include <QString>
+#include <QStringList>
 #include <QCoreApplication>
+
+#include <QList>
 
 MyTcpServer::~MyTcpServer()
 {
@@ -22,7 +28,10 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
 
 void MyTcpServer::slotNewConnection(){
  //   if(server_status==1){
-        mTcpSocket = mTcpServer->nextPendingConnection();
+
+        QTcpSocket* mTcpSocket = mTcpServer->nextPendingConnection();
+        list.push_back(mTcpSocket);
+
         mTcpSocket->write("Hello, World!!! I am echo server!\r\n");
         connect(mTcpSocket, &QTcpSocket::readyRead,this,&MyTcpServer::slotServerRead);
         connect(mTcpSocket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
@@ -30,13 +39,19 @@ void MyTcpServer::slotNewConnection(){
 }
 
 void MyTcpServer::slotServerRead(){
+    QTcpSocket* mTcpSocket = (QTcpSocket*)sender();
+
+    QString res = "";
     while(mTcpSocket->bytesAvailable()>0)
     {
         QByteArray array =mTcpSocket->readAll();
-        mTcpSocket->write(array);
+        res.append(array);
     }
+    mTcpSocket->write(parsing(res).toUtf8());
 }
 
 void MyTcpServer::slotClientDisconnected(){
-    mTcpSocket->close();
+   // mTcpSocket->close();
+    QTcpSocket* mTcpSocket = (QTcpSocket*)sender();
+    list.removeAt(list.indexOf(mTcpSocket));
 }
