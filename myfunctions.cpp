@@ -26,7 +26,7 @@ QString parsing(QString data_from_client){
     //admin = auth&admin&admin123&-
     //user = auth&user&pass&-
     //reg = reg&newuser&123&mail
-    QStringList list = data_from_client.split("&", Qt::SkipEmptyParts);
+    QStringList list = data_from_client.split("&", QString::SplitBehavior::SkipEmptyParts);
     if (list[0] == "auth"){
          return auth(list[1], list[2]);
     }
