@@ -1,0 +1,68 @@
+\hypertarget{database_8h_source}{}\doxysection{database.\+h}
+\label{database_8h_source}\index{D:/ProgTech/Qq/database.h@{D:/ProgTech/Qq/database.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DATABASE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DATABASE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QSqlRecord>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_database}{Database}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_database_destroyer}{DatabaseDestroyer}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{private}:}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_database}{Database}} * databasePointer;}
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_database_destroyer}{\string~DatabaseDestroyer}}() \{\textcolor{keyword}{delete} databasePointer;\}}
+\DoxyCodeLine{17         \textcolor{keywordtype}{void} initialize(\mbox{\hyperlink{class_database}{Database}} * p)\{databasePointer = p;\}}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_database}{Database}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keyword}{private}:}
+\DoxyCodeLine{23         \textcolor{keyword}{static} \mbox{\hyperlink{class_database}{Database}} * p\_instance;}
+\DoxyCodeLine{24         \textcolor{keyword}{static} \mbox{\hyperlink{class_database_destroyer}{DatabaseDestroyer}} destroyer;}
+\DoxyCodeLine{25         \textcolor{keyword}{static} QSqlDatabase db;}
+\DoxyCodeLine{26     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_database}{Database}}()\{}
+\DoxyCodeLine{28             db = QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QSQLITE"{}});}
+\DoxyCodeLine{29             db.setDatabaseName(\textcolor{stringliteral}{"{}D:/ProgTech/DataBase/build-\/DataBase-\/Desktop\_Qt\_6\_2\_3\_MSVC2019\_64bit-\/Debug/ForUsers.db"{}});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31             \textcolor{keywordflow}{if}(!db.open())}
+\DoxyCodeLine{32                 qDebug()<<db.lastError().text();}
+\DoxyCodeLine{33         \};}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_database}{Database}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_database}{Database}}\& ); \textcolor{comment}{//=delete}}
+\DoxyCodeLine{35         \mbox{\hyperlink{class_database}{Database}}\& operator = (\mbox{\hyperlink{class_database}{Database}} \&); \textcolor{comment}{//=delete}}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_database}{\string~Database}}()\{db.close();\}}
+\DoxyCodeLine{37         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_database_destroyer}{DatabaseDestroyer}};}
+\DoxyCodeLine{38     \textcolor{keyword}{public}:}
+\DoxyCodeLine{39         \textcolor{keyword}{static} \mbox{\hyperlink{class_database}{Database}}* getInstance()\{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{if} (!p\_instance)}
+\DoxyCodeLine{41             \{}
+\DoxyCodeLine{42                 p\_instance = \textcolor{keyword}{new} \mbox{\hyperlink{class_database}{Database}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44                 destroyer.initialize(p\_instance);}
+\DoxyCodeLine{45             \}}
+\DoxyCodeLine{46             \textcolor{keywordflow}{return} p\_instance;}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keyword}{static} QSqlQuery query\_to\_db(QString temp)}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             QSqlQuery query(db);}
+\DoxyCodeLine{52             query.exec(temp);}
+\DoxyCodeLine{53             \textcolor{keywordflow}{return} query;}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         \textcolor{comment}{//functions}}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \mbox{\hyperlink{class_database}{Database}} * Database::p\_instance = 0;}
+\DoxyCodeLine{59 \mbox{\hyperlink{class_database_destroyer}{DatabaseDestroyer}} Database::destroyer;}
+\DoxyCodeLine{60 QSqlDatabase Database::db;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DATABASE\_H}}
+
+\end{DoxyCode}
