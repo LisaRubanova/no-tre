@@ -15,13 +15,25 @@ public:
     explicit MyTcpServer(QObject *parent = nullptr);
     ~MyTcpServer();
 public slots:
+    /**
+     * @brief Функция создания слота для нового подключения
+     */
     void slotNewConnection();
+    /**
+     * @brief Функция отключения клиента
+     */
     void slotClientDisconnected();
-
+    /**
+     * @brief Функция чтения строки от пользователя
+     */
     void slotServerRead();
 private:
     QTcpServer * mTcpServer;
     QTcpSocket * mTcpSocket;
+    /**
+     * @brief список подключенний, сокетов
+     */
+    QList<QTcpSocket*> list;
     //int server_status;
 };
 #endif // MYTCPSERVER_H
