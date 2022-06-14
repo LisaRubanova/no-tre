@@ -47,15 +47,6 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
         //server_status=1;
         qDebug() << "server is started";
     }
-
-    //QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("D:/ProgTech/DataBase/build-DataBase-Desktop_Qt_6_2_3_MSVC2019_64bit-Debug/Test1.db");
-    //if (!db.open()){
-    //    qDebug() << "nope";
-    //}
-    //else{
-    //    qDebug() << "ok";
-    //}
 }
 
 
@@ -83,10 +74,12 @@ void MyTcpServer::slotServerRead(){
     QString res = "";
     while(mTcpSocket->bytesAvailable()>0)
     {
-        QByteArray array =mTcpSocket->readAll();
+        QByteArray array = mTcpSocket->readAll();
         res.append(array);
     }
-    mTcpSocket->write(f.parsing(res).toUtf8());
+    //qDebug() << f.encrypt(f.parsing(res));
+    mTcpSocket->write(f.encrypt(f.parsing(res), 562).toUtf8());
+    //mTcpSocket->write(f.parsing(res).toUtf8());
 
 }
 
@@ -94,9 +87,10 @@ void MyTcpServer::slotServerRead(){
  * @brief возможность подключения нескольких клиентов
  */
 void MyTcpServer::slotClientDisconnected(){
-    mTcpSocket->close();
-    qDebug() << list.size();
-    mTcpSocket->close();
     QTcpSocket* mTcpSocket = (QTcpSocket*)sender();
     list.removeAt(list.indexOf(mTcpSocket));
+    mTcpSocket->close();
+    qDebug() << list.size();
+    lognow = "";
+
 }

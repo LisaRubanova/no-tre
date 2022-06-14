@@ -2,8 +2,46 @@
 #include "ui_authform.h"
 
 void AuthForm::clean(){
-    ui->lineEdit_log->setText("");
-    ui->lineEdit_pass->setText("");
+    ui->lineEdit_1log->setText("");
+    ui->lineEdit_2pass->setText("");
+    ui->lineEdit_3email->setText("");
+    ui->lineEdit_4name->setText("");
+    ui->lineEdit_5surname->setText("");
+}
+
+void AuthForm::page(QString form){
+    ui->lineEdit_1log->setFocus(Qt::TabFocusReason);
+    if (form == "reg"){
+        ui->lineEdit_1log->setVisible(true);
+        ui->lineEdit_2pass->setVisible(true);
+        ui->lineEdit_3email->setVisible(true);
+        ui->lineEdit_4name->setVisible(true);
+        ui->lineEdit_5surname->setVisible(true);
+
+        ui->radioButton_teacher->setVisible(true);
+        ui->radioButton_student->setVisible(true);
+        ui->label_note->setVisible(true);
+        ui->toolButtonback_to_auth->setVisible(true);
+        ui->pushButton_reg->setVisible(false);
+        ui->pushButton_ok->setVisible(true);
+    }
+    else if (form == "auth"){
+        ui->lineEdit_1log->setVisible(true);
+        ui->lineEdit_2pass->setVisible(true);
+        ui->lineEdit_3email->setVisible(false);
+        ui->lineEdit_4name->setVisible(false);
+        ui->lineEdit_5surname->setVisible(false);
+
+        ui->radioButton_teacher->setVisible(false);
+        ui->radioButton_student->setVisible(false);
+        ui->label_note->setVisible(false);
+
+        ui->toolButtonback_to_auth->setVisible(false);
+        ui->pushButton_reg->setVisible(true);
+        ui->pushButton_ok->setVisible(true);
+    }
+
+
 }
 
 void AuthForm::send_signal(QString type){
@@ -28,10 +66,10 @@ AuthForm::AuthForm(QWidget *parent) :
     ui(new Ui::AuthForm)
 {
     ui->setupUi(this);
+    wrong_cred = new wrong_form;
+    exists_f = new exists_form;
     clean();
-    ui->radioButton_teacher->setVisible(false);
-    ui->radioButton_student->setVisible(false);
-    ui->lineEdit_email->setVisible(false);
+    page("auth");
 }
 
 /**
@@ -46,6 +84,7 @@ AuthForm::~AuthForm()
 void AuthForm::success_log_as_student()
 {
     hide();
+    //get_student();
     emit logged_in_success_as_student();
 }
 
@@ -56,32 +95,25 @@ void AuthForm::success_log_as_teacher()
 }
 
 
-/*void AuthForm::success_log()
-{
-    hide();
-    emit logged_in_success();
-}*/
-
 void AuthForm::not_success_log()
 {
     clean();
+    wrong_cred->show();
+    connect(wrong_cred, &wrong_form::registration, this, &AuthForm::on_pushButton_reg_clicked);
     //emit logged_in_fail();
 }
 
 void AuthForm::success_reg()
 {
     clean();
-    ui->lineEdit_email->setVisible(false);
-    ui->radioButton_teacher->setVisible(false);
-    ui->radioButton_student->setVisible(false);
-    ui->pushButton_reg->setVisible(true);
+    page("auth");
     //emit reg();
 }
 
 void AuthForm::not_success_reg()
 {
     clean();
-    ui->lineEdit_email->setText("");
+    exists_f->show();
     //emit logged_in_fail();
 }
 /**
@@ -90,11 +122,7 @@ void AuthForm::not_success_reg()
 void AuthForm::on_pushButton_reg_clicked()
 {
     clean();
-    ui->lineEdit_email->setText("");
-    ui->radioButton_teacher->setVisible(true);
-    ui->radioButton_student->setVisible(true);
-    ui->lineEdit_email->setVisible(true);
-    ui->pushButton_reg->setVisible(false);
+    page("reg");
 }
 
 /**
@@ -102,30 +130,38 @@ void AuthForm::on_pushButton_reg_clicked()
  */
 void AuthForm::on_pushButton_ok_clicked()
 {
-    QString log = ui->lineEdit_log->text();
-    QString pass = ui->lineEdit_pass->text();
-    //get_stat(1);
-    //get_stat(2);
-    //get_stat(3);
-    if(ui->lineEdit_email->isVisible()){
-        QString mymail = ui->lineEdit_email->text();
-        if (log == "" || pass == "" || mymail == ""){
-            clean();
-            ui->lineEdit_email->setText("");
+    QString log = ui->lineEdit_1log->text();
+    QString pass = ui->lineEdit_2pass->text();
+    if(ui->lineEdit_3email->isVisible()){
 
+        QString mymail = ui->lineEdit_3email->text();
+        QRegularExpression re("@"".");
+        QRegularExpressionMatch match = re.match(mymail);
+        if(match.hasMatch()){
+            QString name = ui->lineEdit_4name->text();
+            QString surname = ui->lineEdit_5surname->text();
+            if (log == "" || pass == "" || mymail == "" || name == "" || surname == ""
+                    ||log.length() > 100 || pass.length() > 100 || mymail.length() > 100 || name.length() > 100 || surname.length() > 100){
+                clean();
+            }
+            else{
+                //connect (this, reg_student(), this, reg);
+                if (ui->radioButton_teacher->isChecked()){
+                    reg(log, pass, mymail, "teacher", name, surname);
+                }
+                else if (ui->radioButton_student->isChecked()){
+                    reg(log, pass, mymail, "student", name, surname);
+                }
+                else if (!&AuthForm::on_radioButton_student_clicked && !&AuthForm::on_radioButton_teacher_clicked){
+                    not_success_reg();
+                }
+                send_signal("reg");
+            }
         }
         else{
-            if (&AuthForm::on_radioButton_student_clicked){
-                reg(log, pass, mymail, "student");
-            }
-            else if (&AuthForm::on_radioButton_teacher_clicked){
-                reg(log, pass, mymail, "teacher");
-            }
-            else if (!&AuthForm::on_radioButton_student_clicked && !&AuthForm::on_radioButton_teacher_clicked){
-                not_success_reg();
-            }
-            send_signal("reg");
+            clean();
         }
+
     }else{
         if (log == "" || pass == ""){
             clean();
@@ -137,19 +173,19 @@ void AuthForm::on_pushButton_ok_clicked()
     }
 }
 
-void AuthForm::on_lineEdit_log_returnPressed()
+void AuthForm::on_lineEdit_1log_returnPressed()
 {
-    focusNextChild();
+    ui->lineEdit_2pass->setFocus(Qt::TabFocusReason);
 }
 
 
-void AuthForm::on_lineEdit_pass_returnPressed()
+void AuthForm::on_lineEdit_2pass_returnPressed()
 {
 
-    QString log = ui->lineEdit_log->text();
-    QString pass = ui->lineEdit_pass->text();
-    if(ui->lineEdit_email->isVisible()){
-        focusNextChild();
+    QString log = ui->lineEdit_1log->text();
+    QString pass = ui->lineEdit_2pass->text();
+    if(ui->lineEdit_3email->isVisible()){
+        ui->lineEdit_3email->setFocus(Qt::TabFocusReason);
     }else{
         if (log == "" || pass == ""){
             clean();
@@ -171,5 +207,24 @@ bool AuthForm::on_radioButton_student_clicked(bool checked)
 bool AuthForm::on_radioButton_teacher_clicked(bool checked)
 {
     return checked;
+}
+
+
+void AuthForm::on_toolButtonback_to_auth_clicked()
+{
+    clean();
+    page("auth");
+}
+
+
+void AuthForm::on_lineEdit_3email_returnPressed()
+{
+    ui->lineEdit_4name->setFocus(Qt::TabFocusReason);
+}
+
+
+void AuthForm::on_lineEdit_4name_returnPressed()
+{
+    ui->lineEdit_5surname->setFocus(Qt::TabFocusReason);
 }
 

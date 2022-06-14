@@ -11,27 +11,45 @@ CONFIG += c++11
 
 # aaaaaa
 SOURCES += \
+    add_group.cpp \
     authform.cpp \
     back_func.cpp \
+    cannot_change.cpp \
     client.cpp \
+    exists_form.cpp \
     form_statistic.cpp \
+    form_statistic_teacher.cpp \
     form_task.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    not_allowed.cpp \
+    wrong_form.cpp
 
 HEADERS += \
+    add_group.h \
     authform.h \
     back_func.h \
+    cannot_change.h \
     client.h \
+    exists_form.h \
     form_statistic.h \
+    form_statistic_teacher.h \
     form_task.h \
-    mainwindow.h
+    mainwindow.h \
+    not_allowed.h \
+    wrong_form.h
 
 FORMS += \
+    add_group.ui \
     authform.ui \
+    cannot_change.ui \
+    exists_form.ui \
     form_statistic.ui \
+    form_statistic_teacher.ui \
     form_task.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    not_allowed.ui \
+    wrong_form.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

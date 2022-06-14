@@ -25,6 +25,7 @@ public:
      * @param n
      */
     void set_task(int n);
+    void set_variants(int n);
 
 private slots:
     /**
@@ -40,12 +41,17 @@ private:
     /**
      * @brief Номер задания
      */
+    void clear_all();
     int task_num;
     QString input;
 signals:
-    void solved_1();
-    void solved_2();
-    void solved_3();
+    void solved_now_1();
+    void solved_now_2();
+    void solved_now_3();
+
+    void not_solved_now_1();
+    void not_solved_now_2();
+    void not_solved_now_3();
 };
 
 #endif // FORM_TASK_H

@@ -4,8 +4,12 @@
 #include <QMainWindow>
 #include "client.h"
 #include "authform.h"
+#include "add_group.h"
 #include "form_task.h"
 #include "form_statistic.h"
+#include "form_statistic_teacher.h"
+#include "wrong_credentials.h"
+#include "cannot_change.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -65,11 +69,15 @@ private slots:
     //void check_show();
     void s1();
     void s2();
+    void ny1();
+    void ny2();
     void n_s1();
     void n_s2();
 
     void teacher();
     void student();
+
+    void on_pushButton_new_group_clicked();
 
 private:
     /**
@@ -86,5 +94,8 @@ private:
     Form_task *task_f;
 
     form_statistic *stat_f;
+
+    Form_statistic_teacher * stat_t;
+    add_group *n_group;
 };
 #endif // MAINWINDOW_H
