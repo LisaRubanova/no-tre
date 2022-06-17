@@ -1,0 +1,46 @@
+\hypertarget{myfunctions_8h_source}{}\doxysection{myfunctions.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MYFUNCTIONS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MYFUNCTIONS\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QSqlRecord>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QCryptographicHash>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}singleton\_db.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classmyfunctions}{myfunctions}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     QSqlDatabase *db;}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{classmyfunctions_ad6195aa97f3b970d9bf38d225d7ea2cc}{myfunctions}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{classmyfunctions_a7dc656e8af2fdb0334c23cf9c3da0be1}{\string~myfunctions}}();}
+\DoxyCodeLine{19     \textcolor{comment}{//katya}}
+\DoxyCodeLine{26 \textcolor{comment}{}    QString \mbox{\hyperlink{classmyfunctions_a219405ed743f581c91987b74827c8415}{parsing}}(QString data\_from\_client);}
+\DoxyCodeLine{34     \textcolor{comment}{//lisa}}
+\DoxyCodeLine{35     QString \mbox{\hyperlink{classmyfunctions_a3a903df0338c862a7ed2320286b12546}{reg}}(QString login, QString password, QString email, QString status, QString name, QString surname);}
+\DoxyCodeLine{42     \textcolor{comment}{//arceniy}}
+\DoxyCodeLine{43     QString \mbox{\hyperlink{classmyfunctions_ac3bea0986c5a02ae39e3f38c228e7b66}{auth}}(QString login, QString password);}
+\DoxyCodeLine{51     QString \mbox{\hyperlink{classmyfunctions_a90bb8a672e2e0096bac78317c5546c46}{updStat}}(QString name, QString task\_num, QString status\_of\_task);}
+\DoxyCodeLine{57     QString \mbox{\hyperlink{classmyfunctions_a49b4da71872dc6874d001f6057e432bc}{get\_stat}} (QString task\_num);}
+\DoxyCodeLine{64     QString \mbox{\hyperlink{classmyfunctions_a3539ea39493eea96cabe301d61b9c581}{encrypt}}(QString toEncrypt, quint32 key);}
+\DoxyCodeLine{71     QString \mbox{\hyperlink{classmyfunctions_a5c3ae5a9aef055caa024b845e618875a}{decrypt}}(QString toDecrypt, quint32 key);}
+\DoxyCodeLine{87     QString \mbox{\hyperlink{classmyfunctions_aa856d56bbc42194ea5046bdb3351a2e1}{add\_group}}(QString group\_num, QString log\_p1, QString log\_p2, QString log\_p3,}
+\DoxyCodeLine{88                       QString log\_p4, QString log\_p5, QString log\_p6, QString log\_p7,}
+\DoxyCodeLine{89                       QString log\_p8, QString log\_p9, QString teacher);}
+\DoxyCodeLine{96     QString \mbox{\hyperlink{classmyfunctions_abf9b37b7142e5d1bd398762394083240}{get\_login}}(QString name, QString surname);}
+\DoxyCodeLine{102     QString \mbox{\hyperlink{classmyfunctions_a91207b0fb918a81a48f08fa008872815}{check\_access}}(QString group\_num);}
+\DoxyCodeLine{108     QString \mbox{\hyperlink{classmyfunctions_a3150e729e7d7412fcef64a5473900cde}{get\_info}}(QString group);}
+\DoxyCodeLine{113     QString \mbox{\hyperlink{classmyfunctions_aca550ba6bc6aa0327c36a000c6042bc3}{get\_teacher}}();}
+\DoxyCodeLine{118     QString \mbox{\hyperlink{classmyfunctions_a79e4039bfd04433c00245671a3a3f1b3}{get\_student}}();}
+\DoxyCodeLine{123     QString \mbox{\hyperlink{classmyfunctions_ac0c7631512411e7f09127104b8f8a46b}{get\_group}}();}
+\DoxyCodeLine{129     QString \mbox{\hyperlink{classmyfunctions_a302924117f1f3ca330026cb2e8fce199}{check\_student}}(QString login);}
+\DoxyCodeLine{130 \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MYFUNCTIONS\_H}}
+
+\end{DoxyCode}

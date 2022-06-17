@@ -1,0 +1,44 @@
+\hypertarget{singleton__db_8h_source}{}\doxysection{singleton\+\_\+db.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SINGLETON\_DB\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SINGLETON\_DB\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{//\#include <QObject>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QSqlRecord>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classsingleton__db}{singleton\_db}};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classsingleton__db__destroyer}{singleton\_db\_destroyer}}\{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{classsingleton__db}{singleton\_db}} * p\_instance;}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{classsingleton__db__destroyer_a3c48cc49577d04e7947be842d254bc22}{\string~singleton\_db\_destroyer}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsingleton__db__destroyer_a2ffb9cfe62ace61552ad3dbd75576097}{initialize}}(\mbox{\hyperlink{classsingleton__db}{singleton\_db}} * p);}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classsingleton__db}{singleton\_db}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \mbox{\hyperlink{classsingleton__db}{singleton\_db}} * p\_instance;}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \mbox{\hyperlink{classsingleton__db__destroyer}{singleton\_db\_destroyer}} destroyer;}
+\DoxyCodeLine{27     QSqlDatabase db;}
+\DoxyCodeLine{28 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{29     \mbox{\hyperlink{classsingleton__db_a7ce0f5a3b901773bab22bdb0423f1a82}{singleton\_db}}();}
+\DoxyCodeLine{30     \mbox{\hyperlink{classsingleton__db_a7ce0f5a3b901773bab22bdb0423f1a82}{singleton\_db}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsingleton__db}{singleton\_db}}\&);}
+\DoxyCodeLine{31     \mbox{\hyperlink{classsingleton__db}{singleton\_db}} \& operator= (\mbox{\hyperlink{classsingleton__db}{singleton\_db}}\&);}
+\DoxyCodeLine{32     \mbox{\hyperlink{classsingleton__db_ad2fb254ff594334690dc49467ea71781}{\string~singleton\_db}}();}
+\DoxyCodeLine{33     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classsingleton__db__destroyer}{singleton\_db\_destroyer}};}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \textcolor{keyword}{static} \mbox{\hyperlink{classsingleton__db}{singleton\_db}} * \mbox{\hyperlink{classsingleton__db_abf2d0bff96ffb5730fdc8f2eeaa81d0b}{getInstance}}();}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsingleton__db_a203e996385ee6c3d4d688081888a26c1}{close\_db}}();}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SINGLETON\_DB\_H}}
+
+\end{DoxyCode}

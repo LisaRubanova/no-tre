@@ -1,15 +1,25 @@
 #include "client.h"
 #include <QDebug>
 #include <QCoreApplication>
-
+/**
+ * @brief clientDestroyer::~clientDestroyer деструктор
+ */
 clientDestroyer::~clientDestroyer(){
     delete p_instance;
 }
-
+/**
+* @brief clientDestroyer::initialize копирует ссылку на объект класса client
+ * для последующей работы с ней в классе clientDestroyer
+* @param p
+*/
 void clientDestroyer::initialize(client * p){
     p_instance = p;
 }
-
+/**
+ * @brief client::encrypt
+ * @param toEncrypt
+ * @return зашифрованные данные
+ */
 QString client::encrypt(QString toEncrypt){
     quint32 key = 562;
     QByteArray arr(toEncrypt.toUtf8());
@@ -18,7 +28,11 @@ QString client::encrypt(QString toEncrypt){
 
     return QString::fromLatin1(arr.toBase64());
 }
-
+/**
+ * @brief client::decrypt
+ * @param toDecrypt
+ * @return расшифрованные данные
+ */
 QString client::decrypt(QString toDecrypt)
 {
     quint32 key = 562;
@@ -28,17 +42,25 @@ QString client::decrypt(QString toDecrypt)
 
     return QString::fromUtf8(arr);
 }
-
+/**
+ * @brief client::client подключение клиента
+ * @param parent
+ */
 client::client(QObject *parent){
     mTcpSocket = new QTcpSocket(this);
     mTcpSocket->connectToHost("127.0.0.1", 33333);
     connect(mTcpSocket, &QTcpSocket::readyRead, this, &client::slotServerRead);
 }
-
+/**
+ * @brief client::~client отключение клиента
+ */
 client::~client(){
     mTcpSocket->close();
 }
-
+/**
+ * @brief client::getInstance создание и сохранение ссылки в аргумент p_instance
+ * @return
+ */
 client* client::getInstance(){
     if (!p_instance)
     {
@@ -49,7 +71,10 @@ client* client::getInstance(){
 }
 
 //encrypting and decrypting example with Ceasar/ to show how the encrypting should work
-
+/**
+ * @brief client::sendToServer отправка запроса на сервер
+ * @param message
+ */
 void client::sendToServer(QString message){
     //qDebug() << "encrypted" << encrypt(message).toUtf8();
     mTcpSocket->write(encrypt(message).toUtf8());
@@ -58,7 +83,9 @@ void client::sendToServer(QString message){
 
 
 
-
+/**
+ * @brief client::slotServerRead получение ответа от сервера
+ */
 void client::slotServerRead(){
     QString array = "";
     while(mTcpSocket->bytesAvailable()>0)
@@ -70,7 +97,7 @@ void client::slotServerRead(){
         array = decrypt(array);
         //mTcpSocket->write(array);
         //qDebug()<< array;
-        QStringList list = array.split("&", QString::SplitBehavior::SkipEmptyParts);
+        QStringList list = array.split("&", Qt::SkipEmptyParts);
 
         if (array == "Welcome! student"){
             emit log_in_as_student();

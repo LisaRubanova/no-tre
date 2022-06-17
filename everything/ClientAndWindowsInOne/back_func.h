@@ -23,9 +23,39 @@ void reg(QString log, QString pass, QString email, QString status, QString name,
  * @param upd
  */
 void upd_stat(int n, QString upd);
-
+/**
+ * @brief get_log вывод данных пользователя
+ * @param name
+ * @param surname
+ */
 void get_log(QString name, QString surname);
+/**
+ * @brief get_stat вывод статуса в кабинете пользователя
+ * @param n - количество набранных баллов
+ */
 void get_stat(int n);
+/**
+ * @brief new_group добавление группы
+ * @param group_num
+ * @param n1 - Имя
+ * @param s1 - Фамилия
+ * @param n2
+ * @param s2
+ * @param n3
+ * @param s3
+ * @param n4
+ * @param s4
+ * @param n5
+ * @param s5
+ * @param n6
+ * @param s6
+ * @param n7
+ * @param s7
+ * @param n8
+ * @param s8
+ * @param n9
+ * @param s9
+ */
 void new_group(QString group_num, QString n1, QString s1, QString n2, QString s2, QString n3, QString s3, QString n4, QString s4,
                QString n5, QString s5, QString n6, QString s6, QString n7, QString s7, QString n8, QString s8,
                QString n9, QString s9);
@@ -93,12 +123,28 @@ QString gen_task3();
  */
 bool check_task(int task_num, QVector<QString> ans, QString input);
 
+/**
+ * @brief check_access проверка доступа преподавателя к группе
+ * @param group_num
+ */
 void check_access(QString group_num);
+/**
+ * @brief get_info получение информации по группе
+ * @param group
+ */
 void get_info(QString group);
 
-
+/**
+ * @brief get_student получение инфрмации о студенте
+ */
 void get_student();
+/**
+ * @brief get_teacher получение информации о преподавателе
+ */
 void get_teacher();
+/**
+ * @brief get_teacher получение номера группы
+ */
 void get_group();
 
 #endif // BACK_FUNC_H

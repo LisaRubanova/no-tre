@@ -16,12 +16,28 @@ class add_group : public QWidget
     Q_OBJECT
 
 public:
+    /**
+     * @brief add_group::add_group конструктор, создание формы
+     * @param parent
+     */
     explicit add_group(QWidget *parent = nullptr);
+    /**
+     * @brief add_group::~add_group деструктор, закрытие формы
+     */
     ~add_group();
+    /**
+     * @brief add_group::clean очищает поля
+     */
     void clean();
 
 private slots:
+    /**
+     * @brief add_group::on_pushButton_clicked добавление группы
+     */
     void on_pushButton_clicked();
+    /**
+     * @brief add_group::no_changes вызов флрмы предупреждения
+     */
     void no_changes();
 
 private:

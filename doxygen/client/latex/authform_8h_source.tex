@@ -1,0 +1,75 @@
+\hypertarget{authform_8h_source}{}\doxysection{authform.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AUTHFORM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AUTHFORM\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}client.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}back\_func.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}wrong\_form.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}exists\_form.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QRegularExpression>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QRegularExpressionMatch>}}
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_auth_form}{AuthForm}};}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_auth_form}{AuthForm}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     Q\_OBJECT}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_auth_form_ae9362a4136f5c3e95f71f855c1c486a5}{AuthForm}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_auth_form_adc76288288ea5cebb014695b17233a14}{\string~AuthForm}}();}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_auth_form_a2b204e8f27b037bbfd9e721844e82fa5}{page}}(QString form);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//void on\_pushButton\_reg\_clicked();}}
+\DoxyCodeLine{41 \textcolor{comment}{}    \textcolor{keywordtype}{void} on\_pushButton\_ok\_clicked();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} success\_log\_as\_student();}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} success\_log\_as\_teacher();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} not\_success\_log();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} success\_reg();}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} not\_success\_reg();}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} on\_pushButton\_reg\_clicked();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} on\_lineEdit\_1log\_returnPressed();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} on\_lineEdit\_2pass\_returnPressed();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{83     \textcolor{keywordtype}{bool} on\_radioButton\_student\_clicked(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} on\_radioButton\_teacher\_clicked(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} on\_toolButtonback\_to\_auth\_clicked();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} on\_lineEdit\_3email\_returnPressed();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} on\_lineEdit\_4name\_returnPressed();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{//void on\_pushButton\_reg\_pressed();}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{//void on\_radioButton\_student\_clicked();}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 signals:}
+\DoxyCodeLine{112     \textcolor{comment}{//void logged\_in();}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} logged\_in\_success\_as\_teacher();}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} logged\_in\_success\_as\_student();}
+\DoxyCodeLine{115     \textcolor{comment}{//void reg\_student();}}
+\DoxyCodeLine{116     \textcolor{comment}{//void reg\_teacher();}}
+\DoxyCodeLine{117     \textcolor{comment}{//void logged\_in\_fail();//не очень нужен, но вдруг}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{123     Ui::AuthForm *ui;}
+\DoxyCodeLine{124     \mbox{\hyperlink{classwrong__form}{wrong\_form}} *wrong\_cred;}
+\DoxyCodeLine{125     \mbox{\hyperlink{classexists__form}{exists\_form}} *exists\_f;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{void} clean();}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} send\_signal(QString type);}
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AUTHFORM\_H}}
+
+\end{DoxyCode}

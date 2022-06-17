@@ -1,6 +1,8 @@
 #include "authform.h"
 #include "ui_authform.h"
-
+/**
+ * @brief AuthForm::clean очищенние полей
+ */
 void AuthForm::clean(){
     ui->lineEdit_1log->setText("");
     ui->lineEdit_2pass->setText("");
@@ -8,7 +10,10 @@ void AuthForm::clean(){
     ui->lineEdit_4name->setText("");
     ui->lineEdit_5surname->setText("");
 }
-
+/**
+ * @brief AuthForm::page уточнение того, какая форма будет отображатьс "регистрации"/"авторизации"
+ * @param form
+ */
 void AuthForm::page(QString form){
     ui->lineEdit_1log->setFocus(Qt::TabFocusReason);
     if (form == "reg"){
@@ -40,10 +45,11 @@ void AuthForm::page(QString form){
         ui->pushButton_reg->setVisible(true);
         ui->pushButton_ok->setVisible(true);
     }
-
-
 }
-
+/**
+ * @brief AuthForm::send_signal проверка успешности регистрации/авторизации
+ * @param type
+ */
 void AuthForm::send_signal(QString type){
     if (type == "reg"){
         connect(client::getInstance(),&client::registered,this, &AuthForm::success_reg);
@@ -56,7 +62,6 @@ void AuthForm::send_signal(QString type){
         connect(client::getInstance(),&client::wrong_credentials,this, &AuthForm::not_success_log);
     }
 }
-
 /**
  * @brief конструктор, создание формы авторизации, в котором поле для ввода email не показывается
  * @param parent
@@ -80,21 +85,27 @@ AuthForm::~AuthForm()
     delete ui;
 }
 
-
+/**
+ * @brief AuthForm::success_log_as_student успешный вход для студента
+ */
 void AuthForm::success_log_as_student()
 {
     hide();
     //get_student();
     emit logged_in_success_as_student();
 }
-
+/**
+ * @brief AuthForm::success_log_as_teacher успешный вход для преподавателя
+ */
 void AuthForm::success_log_as_teacher()
 {
     hide();
     emit logged_in_success_as_teacher();
 }
 
-
+/**
+ * @brief AuthForm::not_success_log не успешный вход для любого пользователя
+ */
 void AuthForm::not_success_log()
 {
     clean();
@@ -102,14 +113,18 @@ void AuthForm::not_success_log()
     connect(wrong_cred, &wrong_form::registration, this, &AuthForm::on_pushButton_reg_clicked);
     //emit logged_in_fail();
 }
-
+/**
+ * @brief AuthForm::success_reg успешная регистрация
+ */
 void AuthForm::success_reg()
 {
     clean();
     page("auth");
     //emit reg();
 }
-
+/**
+ * @brief AuthForm::not_success_reg не успешная регистарция
+ */
 void AuthForm::not_success_reg()
 {
     clean();
@@ -172,13 +187,17 @@ void AuthForm::on_pushButton_ok_clicked()
         }
     }
 }
-
+/**
+ * @brief AuthForm::on_lineEdit_1log_returnPressed фокуссировка на поле пароля
+ */
 void AuthForm::on_lineEdit_1log_returnPressed()
 {
     ui->lineEdit_2pass->setFocus(Qt::TabFocusReason);
 }
 
-
+/**
+ * @brief AuthForm::on_lineEdit_2pass_returnPressed вход по энтеру
+ */
 void AuthForm::on_lineEdit_2pass_returnPressed()
 {
 
@@ -195,34 +214,47 @@ void AuthForm::on_lineEdit_2pass_returnPressed()
             send_signal("auth");
         }
     }
-
 }
-
+/**
+ * @brief AuthForm::on_radioButton_student_clicked выбор пункта студент
+ * @param checked
+ * @return выбран ли пункт или нет
+ */
 bool AuthForm::on_radioButton_student_clicked(bool checked)
 {
     return checked;
 }
 
-
+/**
+ * @brief AuthForm::on_radioButton_teacher_clicked выбор пункта преподаватель
+ * @param checked
+ * @return выбран ли пункт или нет
+ */
 bool AuthForm::on_radioButton_teacher_clicked(bool checked)
 {
     return checked;
 }
 
-
+/**
+ * @brief AuthForm::on_toolButtonback_to_auth_clicked возрат к форме авторизации со страницы регистрации
+ */
 void AuthForm::on_toolButtonback_to_auth_clicked()
 {
     clean();
     page("auth");
 }
 
-
+/**
+ * @brief AuthForm::on_lineEdit_3email_returnPressed переход по энтеру на поле Имя
+ */
 void AuthForm::on_lineEdit_3email_returnPressed()
 {
     ui->lineEdit_4name->setFocus(Qt::TabFocusReason);
 }
 
-
+/**
+ * @brief AuthForm::on_lineEdit_4name_returnPressed переход по энтеру на поле Фамилия
+ */
 void AuthForm::on_lineEdit_4name_returnPressed()
 {
     ui->lineEdit_5surname->setFocus(Qt::TabFocusReason);

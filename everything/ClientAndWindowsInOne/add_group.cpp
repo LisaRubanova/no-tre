@@ -1,6 +1,9 @@
 #include "add_group.h"
 #include "ui_add_group.h"
-
+/**
+ * @brief add_group::add_group конструктор, создание формы
+ * @param parent
+ */
 add_group::add_group(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::add_group)
@@ -9,16 +12,22 @@ add_group::add_group(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEdit_groupNum->setFocus(Qt::TabFocusReason);
 }
-
+/**
+ * @brief add_group::~add_group деструктор, закрытие формы
+ */
 add_group::~add_group()
 {
     delete ui;
 }
-
+/**
+ * @brief add_group::no_changes вызов флрмы предупреждения
+ */
 void add_group::no_changes(){
     changes->show();
 }
-
+/**
+ * @brief add_group::clean очищает поля
+ */
 void add_group::clean(){
     ui->lineEdit_groupNum->clear();
     ui->lineEdit->clear();
@@ -40,7 +49,9 @@ void add_group::clean(){
     ui->lineEdit_17->clear();
     ui->lineEdit_18->clear();
 }
-
+/**
+ * @brief add_group::on_pushButton_clicked добавление группы
+ */
 void add_group::on_pushButton_clicked()
 {
     QString group_num = ui->lineEdit_groupNum->text();

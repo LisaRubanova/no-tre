@@ -41,7 +41,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(client::getInstance(),&client::not_yet_2, this, &MainWindow::ny2);
 }
 
-
+/**
+ * @brief MainWindow::teacher формирует основное окно для учителя
+ */
 void MainWindow::teacher(){
     MainWindow::show();
     ui->pushButton_new_group->setVisible(true);
@@ -50,7 +52,9 @@ void MainWindow::teacher(){
     status = "teacher";
     //stat_t->show();
 }
-
+/**
+ * @brief MainWindow::student формирует основное окно для студента
+ */
 void MainWindow::student(){
     MainWindow::show();
     ui->pushButton_new_group->setVisible(false);
@@ -67,59 +71,81 @@ void MainWindow::student(){
 }
 */
 //up change color button
+/**
+ * @brief MainWindow::s1 постепенное формирование полной статистики
+ */
 void MainWindow::s1(){
     MainWindow::change_color_button_1();
     get_stat(2);
 }
-
+/**
+ * @brief MainWindow::s2 постепенное формирование полной статистики
+ */
 void MainWindow::s2(){
     MainWindow::change_color_button_2();
     get_stat(3);
 }
-
+/**
+ * @brief MainWindow::ny1 постепенное формирование полной статистики
+ */
 void MainWindow::ny1(){
     get_stat(2);
 }
-
+/**
+ * @brief MainWindow::ny2 постепенное формирование полной статистики
+ */
 void MainWindow::ny2(){
     get_stat(3);
 }
-
+/**
+ * @brief MainWindow::change_color_button_1 изменение цвета кнопки на зеленый для задания 1
+ */
 void MainWindow::change_color_button_1(){
     ui->pushButton_task1->setStyleSheet("background-color: green");
 }
-
+/**
+ * @brief MainWindow::change_color_button_2 изменение цвета кнопки на зеленый для задания 2
+ */
 void MainWindow::change_color_button_2(){
     ui->pushButton_task2->setStyleSheet("background-color: green");
 }
-
+/**
+ * @brief MainWindow::change_color_button_3 изменение цвета кнопки на зеленый для задания 3
+ */
 void MainWindow::change_color_button_3(){
     ui->pushButton_task3->setStyleSheet("background-color: green");
 }
-
+/**
+ * @brief MainWindow::n_s1 постепенное формирование полной статистики
+ */
 void MainWindow::n_s1(){
     MainWindow::n_change_color_button_1();
     get_stat(2);
-}
-
+}/**
+ * @brief MainWindow::n_s2 постепенное формирование полной статистики
+ */
 void MainWindow::n_s2(){
     MainWindow::n_change_color_button_2();
     get_stat(3);
 }
-
+/**
+ * @brief MainWindow::n_change_color_button_1 изменение цвета кнопки на красный для задания 1
+ */
 void MainWindow::n_change_color_button_1(){
     ui->pushButton_task1->setStyleSheet("background-color: red");
 }
-
+/**
+ * @brief MainWindow::n_change_color_button_2 изменение цвета кнопки на красный для задания 2
+ */
 void MainWindow::n_change_color_button_2(){
     ui->pushButton_task2->setStyleSheet("background-color: red");
 }
-
+/**
+ * @brief MainWindow::n_change_color_button_3 изменение цвета кнопки на красный для задания 3
+ */
 void MainWindow::n_change_color_button_3(){
     ui->pushButton_task3->setStyleSheet("background-color: red");
 }
-
-
 
 /**
  * @brief деструктор, для закрытия основного окна
@@ -195,9 +221,9 @@ void MainWindow::on_actionExit_2_triggered()
 {
     on_pushButton_exit_clicked();
 }
-
-
-
+/**
+ * @brief MainWindow::on_pushButton_stat_clicked переход к статистике
+ */
 void MainWindow::on_pushButton_stat_clicked()
 {
    if (status == "teacher"){
@@ -210,8 +236,9 @@ void MainWindow::on_pushButton_stat_clicked()
        stat_f->show();
    }
 }
-
-
+/**
+ * @brief MainWindow::on_pushButton_new_group_clicked переход к форме добаления группы
+ */
 void MainWindow::on_pushButton_new_group_clicked()
 {
     n_group->show();

@@ -1,0 +1,37 @@
+\hypertarget{add__group_8h_source}{}\doxysection{add\+\_\+group.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ADD\_GROUP\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ADD\_GROUP\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}back\_func.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}cannot\_change.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QRegularExpression>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QMap>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QRegularExpressionMatch>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classadd__group}{add\_group}};}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classadd__group}{add\_group}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     Q\_OBJECT}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \textcolor{keyword}{explicit} \mbox{\hyperlink{classadd__group_aab166fde113c8523538679d55a33bc2e}{add\_group}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{27     \mbox{\hyperlink{classadd__group_aaae70cd76c12759c337fdd45651daa3f}{\string~add\_group}}();}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classadd__group_a8abf4c606db0c7773be97f0979309db5}{clean}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} on\_pushButton\_clicked();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} no\_changes();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     Ui::add\_group *ui;}
+\DoxyCodeLine{45     \mbox{\hyperlink{classcannot__change}{cannot\_change}} * changes;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ADD\_GROUP\_H}}
+
+\end{DoxyCode}

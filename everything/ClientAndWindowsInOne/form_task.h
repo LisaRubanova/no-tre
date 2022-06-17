@@ -22,9 +22,13 @@ public:
     ~Form_task();
     /**
      * @brief Функция выбора задания по номеру
-     * @param n
+     * @param n - номер задания
      */
     void set_task(int n);
+    /**
+     * @brief set_variants банк вариантов ответов
+     * @param n - номер задания
+     */\
     void set_variants(int n);
 
 private slots:

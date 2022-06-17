@@ -1,0 +1,87 @@
+\hypertarget{client_8h_source}{}\doxysection{client.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CLIENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CLIENT\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QtNetwork>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QByteArray>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QCoreApplication>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <QTcpSocket>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <QStringList>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//\#include "{}form\_statistic\_teacher.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classclient}{client}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classclient_destroyer}{clientDestroyer}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keyword}{private}:}
+\DoxyCodeLine{21         \mbox{\hyperlink{classclient}{client}} * p\_instance;}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \mbox{\hyperlink{classclient_destroyer_ac40b815ab9258856ca6d4071e826d859}{\string~clientDestroyer}}();}
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} \mbox{\hyperlink{classclient_destroyer_ae4848ee4989e26544535126bc05a2e66}{initialize}}(\mbox{\hyperlink{classclient}{client}} * p);}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classclient}{client}}: \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     Q\_OBJECT}
+\DoxyCodeLine{39     \textcolor{keyword}{private}:}
+\DoxyCodeLine{40         \textcolor{keyword}{static} \mbox{\hyperlink{classclient}{client}} * p\_instance;}
+\DoxyCodeLine{41         \textcolor{keyword}{static} \mbox{\hyperlink{classclient_destroyer}{clientDestroyer}} destroyer;}
+\DoxyCodeLine{42         \textcolor{keyword}{static} QTcpSocket * mTcpSocket;}
+\DoxyCodeLine{43         \textcolor{comment}{//Form\_statistic\_teacher *f\_t;}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{50          \mbox{\hyperlink{classclient_a5eef038ddbc8ea5ab7ac4ed724a4a5e2}{client}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{54         \mbox{\hyperlink{classclient_ad45e388579b8c0ffec6f29ed2c0c4de9}{\string~client}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \mbox{\hyperlink{classclient_a5eef038ddbc8ea5ab7ac4ed724a4a5e2}{client}}(\textcolor{keyword}{const} \mbox{\hyperlink{classclient}{client}}\& );}
+\DoxyCodeLine{57         \mbox{\hyperlink{classclient}{client}}\& operator = (\mbox{\hyperlink{classclient}{client}} \&);}
+\DoxyCodeLine{58         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classclient_destroyer}{clientDestroyer}};}
+\DoxyCodeLine{64         QString \mbox{\hyperlink{classclient_ae884190404ea13ea0c4ddf9768c710bc}{encrypt}}(QString toEncrypt);}
+\DoxyCodeLine{70         QString \mbox{\hyperlink{classclient_acf38bac092620b81ff0ca9fc65d4f1b9}{decrypt}}(QString toDecrypt);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{public}:}
+\DoxyCodeLine{77         \textcolor{keyword}{static} \mbox{\hyperlink{classclient}{client}}* \mbox{\hyperlink{classclient_a02f7a5206b53c333ec1016b9b72fc6af}{getInstance}}();}
+\DoxyCodeLine{78         \textcolor{comment}{//explicit MyTcpServer(QObject *parent = nullptr);}}
+\DoxyCodeLine{83 \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classclient_a5d78f5252daed9e4dfcc20bac4f111ac}{sendToServer}}(QString message);}
+\DoxyCodeLine{84         \textcolor{comment}{//QString tell\_me();}}
+\DoxyCodeLine{85         \textcolor{comment}{//QString info;}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 signals:}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} log\_in\_as\_student();}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} log\_in\_as\_teacher();}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{classwrong__credentials}{wrong\_credentials}}();}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} registered();}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} user\_exists();}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} solved\_1();}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} solved\_2();}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} solved\_3();}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} not\_solved\_1();}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} not\_solved\_2();}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} not\_solved\_3();}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} not\_yet\_1();}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} not\_yet\_2();}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} not\_yet\_3();}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} allowed();}
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} not\_allow();}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} get\_it(QString g);}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} group(QString group);}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} teacher (QString teacher);}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} student (QString student);}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} you\_cannot();}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} student\_in\_group();}
+\DoxyCodeLine{110 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{classclient_a0609be4700471681e8e80aa2ba0a4b59}{slotServerRead}}();}
+\DoxyCodeLine{115 \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CLIENT\_H}}
+\DoxyCodeLine{118 }
+
+\end{DoxyCode}

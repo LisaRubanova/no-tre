@@ -1,0 +1,45 @@
+\hypertarget{form__task_8h_source}{}\doxysection{form\+\_\+task.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef FORM\_TASK\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define FORM\_TASK\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}client.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}back\_func.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_form__task}{Form\_task}};}
+\DoxyCodeLine{9 \}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_form__task}{Form\_task}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     Q\_OBJECT}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_form__task_a76c614ddb17b21c51bf42e39f6097839}{Form\_task}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \mbox{\hyperlink{class_form__task_a89a4c5eb5af4f7db35424e7049c6ec08}{\string~Form\_task}}();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_form__task_af307faf9ef2a1f0704b479b844027924}{set\_task}}(\textcolor{keywordtype}{int} n);\(\backslash\)}
+\DoxyCodeLine{32     void \mbox{\hyperlink{class_form__task_aaef71dfec775d5f35190d229b7338289}{set\_variants}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} on\_pushButton\_ok\_clicked();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     Ui::Form\_task *ui;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} clear\_all();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} task\_num;}
+\DoxyCodeLine{50     QString input;}
+\DoxyCodeLine{51 signals:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} solved\_now\_1();}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} solved\_now\_2();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} solved\_now\_3();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} not\_solved\_now\_1();}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} not\_solved\_now\_2();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} not\_solved\_now\_3();}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FORM\_TASK\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,457 @@
+\hypertarget{classmyfunctions}{}\doxysection{myfunctions Class Reference}
+\label{classmyfunctions}\index{myfunctions@{myfunctions}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmyfunctions_ad6195aa97f3b970d9bf38d225d7ea2cc}\label{classmyfunctions_ad6195aa97f3b970d9bf38d225d7ea2cc}} 
+{\bfseries myfunctions} ()
+\begin{DoxyCompactList}\small\item\em конструктор для открытия базы данных \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmyfunctions_a7dc656e8af2fdb0334c23cf9c3da0be1}\label{classmyfunctions_a7dc656e8af2fdb0334c23cf9c3da0be1}} 
+{\bfseries $\sim$myfunctions} ()
+\begin{DoxyCompactList}\small\item\em деструктор для закрытия базы данных \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a219405ed743f581c91987b74827c8415}{parsing}} (QString data\+\_\+from\+\_\+client)
+\begin{DoxyCompactList}\small\item\em Функция parsing считывает строку формата func\&username\&password\&email\&status, затем вызывает функцию и передает параметры, указанные в строке \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a3a903df0338c862a7ed2320286b12546}{reg}} (QString login, QString password, QString email, QString status, QString name, QString surname)
+\begin{DoxyCompactList}\small\item\em Функция reg отвечает за регистрацию нового пользователя \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_ac3bea0986c5a02ae39e3f38c228e7b66}{auth}} (QString login, QString password)
+\begin{DoxyCompactList}\small\item\em Функция auth отвечает за вход в аккаунт пользователя \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a90bb8a672e2e0096bac78317c5546c46}{upd\+Stat}} (QString name, QString task\+\_\+num, QString status\+\_\+of\+\_\+task)
+\begin{DoxyCompactList}\small\item\em Функция upd\+Stat отвечает за обновление статуса решения задачи \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a49b4da71872dc6874d001f6057e432bc}{get\+\_\+stat}} (QString task\+\_\+num)
+\begin{DoxyCompactList}\small\item\em get\+\_\+stat \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a3539ea39493eea96cabe301d61b9c581}{encrypt}} (QString to\+Encrypt, quint32 key)
+\begin{DoxyCompactList}\small\item\em encrypt \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a5c3ae5a9aef055caa024b845e618875a}{decrypt}} (QString to\+Decrypt, quint32 key)
+\begin{DoxyCompactList}\small\item\em decrypt \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_aa856d56bbc42194ea5046bdb3351a2e1}{add\+\_\+group}} (QString group\+\_\+num, QString log\+\_\+p1, QString log\+\_\+p2, QString log\+\_\+p3, QString log\+\_\+p4, QString log\+\_\+p5, QString log\+\_\+p6, QString log\+\_\+p7, QString log\+\_\+p8, QString log\+\_\+p9, QString teacher)
+\begin{DoxyCompactList}\small\item\em add\+\_\+group \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_abf9b37b7142e5d1bd398762394083240}{get\+\_\+login}} (QString name, QString surname)
+\begin{DoxyCompactList}\small\item\em get\+\_\+login \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a91207b0fb918a81a48f08fa008872815}{check\+\_\+access}} (QString group\+\_\+num)
+\begin{DoxyCompactList}\small\item\em check\+\_\+access \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a3150e729e7d7412fcef64a5473900cde}{get\+\_\+info}} (QString group)
+\begin{DoxyCompactList}\small\item\em get\+\_\+info \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_aca550ba6bc6aa0327c36a000c6042bc3}{get\+\_\+teacher}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+teacher \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a79e4039bfd04433c00245671a3a3f1b3}{get\+\_\+student}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+student \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_ac0c7631512411e7f09127104b8f8a46b}{get\+\_\+group}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+group \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classmyfunctions_a302924117f1f3ca330026cb2e8fce199}{check\+\_\+student}} (QString login)
+\begin{DoxyCompactList}\small\item\em check\+\_\+student \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmyfunctions_aa856d56bbc42194ea5046bdb3351a2e1}\label{classmyfunctions_aa856d56bbc42194ea5046bdb3351a2e1}} 
+\index{myfunctions@{myfunctions}!add\_group@{add\_group}}
+\index{add\_group@{add\_group}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{add\_group()}{add\_group()}}
+{\footnotesize\ttfamily QString myfunctions\+::add\+\_\+group (\begin{DoxyParamCaption}\item[{QString}]{group\+\_\+num,  }\item[{QString}]{log\+\_\+p1,  }\item[{QString}]{log\+\_\+p2,  }\item[{QString}]{log\+\_\+p3,  }\item[{QString}]{log\+\_\+p4,  }\item[{QString}]{log\+\_\+p5,  }\item[{QString}]{log\+\_\+p6,  }\item[{QString}]{log\+\_\+p7,  }\item[{QString}]{log\+\_\+p8,  }\item[{QString}]{log\+\_\+p9,  }\item[{QString}]{teacher }\end{DoxyParamCaption})}
+
+
+
+add\+\_\+group 
+
+\mbox{\hyperlink{classmyfunctions_aa856d56bbc42194ea5046bdb3351a2e1}{myfunctions\+::add\+\_\+group}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+num} & \\
+\hline
+{\em log\+\_\+p1} & \\
+\hline
+{\em log\+\_\+p2} & \\
+\hline
+{\em log\+\_\+p3} & \\
+\hline
+{\em log\+\_\+p4} & \\
+\hline
+{\em log\+\_\+p5} & \\
+\hline
+{\em log\+\_\+p6} & \\
+\hline
+{\em log\+\_\+p7} & \\
+\hline
+{\em log\+\_\+p8} & \\
+\hline
+{\em log\+\_\+p9} & \\
+\hline
+{\em teacher} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+создание группы и добавление в группу логины 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_ac3bea0986c5a02ae39e3f38c228e7b66}\label{classmyfunctions_ac3bea0986c5a02ae39e3f38c228e7b66}} 
+\index{myfunctions@{myfunctions}!auth@{auth}}
+\index{auth@{auth}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{auth()}{auth()}}
+{\footnotesize\ttfamily QString myfunctions\+::auth (\begin{DoxyParamCaption}\item[{QString}]{login,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+Функция auth отвечает за вход в аккаунт пользователя 
+
+
+\begin{DoxyEnumerate}
+\item Выполняем запрос по поиску имени пользователя в базе данных.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус входа
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item Сравниваем полученное имя пользователя и пароль, введённые пользователем, со значениями в базе данных. Если совпадает, статус = \char`\"{}\+Welcome! \char`\"{}, иначе статус = (by default) \char`\"{}\+Wrong username or password! \char`\"{} Намеренно не добавлен статус об отсутсвии введенного имени пользователя в базе данных. 
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус попытки входа в аккаунт (\char`\"{}\+Welcome! \char`\"{}/\char`\"{}\+Wrong username or password! \char`\"{}) 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{classmyfunctions_a91207b0fb918a81a48f08fa008872815}\label{classmyfunctions_a91207b0fb918a81a48f08fa008872815}} 
+\index{myfunctions@{myfunctions}!check\_access@{check\_access}}
+\index{check\_access@{check\_access}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{check\_access()}{check\_access()}}
+{\footnotesize\ttfamily QString myfunctions\+::check\+\_\+access (\begin{DoxyParamCaption}\item[{QString}]{group\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+check\+\_\+access 
+
+\mbox{\hyperlink{classmyfunctions_a91207b0fb918a81a48f08fa008872815}{myfunctions\+::check\+\_\+access}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ответ о том, есть ли такая группа уже или нет 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a302924117f1f3ca330026cb2e8fce199}\label{classmyfunctions_a302924117f1f3ca330026cb2e8fce199}} 
+\index{myfunctions@{myfunctions}!check\_student@{check\_student}}
+\index{check\_student@{check\_student}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{check\_student()}{check\_student()}}
+{\footnotesize\ttfamily QString myfunctions\+::check\+\_\+student (\begin{DoxyParamCaption}\item[{QString}]{login }\end{DoxyParamCaption})}
+
+
+
+check\+\_\+student 
+
+\mbox{\hyperlink{classmyfunctions_a302924117f1f3ca330026cb2e8fce199}{myfunctions\+::check\+\_\+student}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+отвечает есть ли такой стулент уже или нет 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a5c3ae5a9aef055caa024b845e618875a}\label{classmyfunctions_a5c3ae5a9aef055caa024b845e618875a}} 
+\index{myfunctions@{myfunctions}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily QString myfunctions\+::decrypt (\begin{DoxyParamCaption}\item[{QString}]{to\+Decrypt,  }\item[{quint32}]{key }\end{DoxyParamCaption})}
+
+
+
+decrypt 
+
+\mbox{\hyperlink{classmyfunctions_a5c3ae5a9aef055caa024b845e618875a}{myfunctions\+::decrypt}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Decrypt} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+расшифрованные данные 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a3539ea39493eea96cabe301d61b9c581}\label{classmyfunctions_a3539ea39493eea96cabe301d61b9c581}} 
+\index{myfunctions@{myfunctions}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily QString myfunctions\+::encrypt (\begin{DoxyParamCaption}\item[{QString}]{to\+Encrypt,  }\item[{quint32}]{key }\end{DoxyParamCaption})}
+
+
+
+encrypt 
+
+\mbox{\hyperlink{classmyfunctions_a3539ea39493eea96cabe301d61b9c581}{myfunctions\+::encrypt}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Encrypt} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+зашифрованные данные 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_ac0c7631512411e7f09127104b8f8a46b}\label{classmyfunctions_ac0c7631512411e7f09127104b8f8a46b}} 
+\index{myfunctions@{myfunctions}!get\_group@{get\_group}}
+\index{get\_group@{get\_group}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_group()}{get\_group()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+group 
+
+\mbox{\hyperlink{classmyfunctions_ac0c7631512411e7f09127104b8f8a46b}{myfunctions\+::get\+\_\+group}}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a3150e729e7d7412fcef64a5473900cde}\label{classmyfunctions_a3150e729e7d7412fcef64a5473900cde}} 
+\index{myfunctions@{myfunctions}!get\_info@{get\_info}}
+\index{get\_info@{get\_info}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_info()}{get\_info()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+info (\begin{DoxyParamCaption}\item[{QString}]{group }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+info 
+
+\mbox{\hyperlink{classmyfunctions_a3150e729e7d7412fcef64a5473900cde}{myfunctions\+::get\+\_\+info}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+возвращает имя, фамилия и заадания
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em group} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+возвращает статистику для учителя\+: имя, фамилия и статус заданий 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_abf9b37b7142e5d1bd398762394083240}\label{classmyfunctions_abf9b37b7142e5d1bd398762394083240}} 
+\index{myfunctions@{myfunctions}!get\_login@{get\_login}}
+\index{get\_login@{get\_login}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_login()}{get\_login()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+login (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QString}]{surname }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+login 
+
+\mbox{\hyperlink{classmyfunctions_abf9b37b7142e5d1bd398762394083240}{myfunctions\+::get\+\_\+login}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em surname} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em surname} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+расшифрованный логин по имени и фамилии 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a49b4da71872dc6874d001f6057e432bc}\label{classmyfunctions_a49b4da71872dc6874d001f6057e432bc}} 
+\index{myfunctions@{myfunctions}!get\_stat@{get\_stat}}
+\index{get\_stat@{get\_stat}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_stat()}{get\_stat()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+stat (\begin{DoxyParamCaption}\item[{QString}]{task\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+stat 
+
+\mbox{\hyperlink{classmyfunctions_a49b4da71872dc6874d001f6057e432bc}{myfunctions\+::get\+\_\+stat}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+возвращает статус задания для отображения статистики 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a79e4039bfd04433c00245671a3a3f1b3}\label{classmyfunctions_a79e4039bfd04433c00245671a3a3f1b3}} 
+\index{myfunctions@{myfunctions}!get\_student@{get\_student}}
+\index{get\_student@{get\_student}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_student()}{get\_student()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+student 
+
+\mbox{\hyperlink{classmyfunctions_a79e4039bfd04433c00245671a3a3f1b3}{myfunctions\+::get\+\_\+student}}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_aca550ba6bc6aa0327c36a000c6042bc3}\label{classmyfunctions_aca550ba6bc6aa0327c36a000c6042bc3}} 
+\index{myfunctions@{myfunctions}!get\_teacher@{get\_teacher}}
+\index{get\_teacher@{get\_teacher}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{get\_teacher()}{get\_teacher()}}
+{\footnotesize\ttfamily QString myfunctions\+::get\+\_\+teacher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+teacher 
+
+\mbox{\hyperlink{classmyfunctions_aca550ba6bc6aa0327c36a000c6042bc3}{myfunctions\+::get\+\_\+teacher}}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmyfunctions_a219405ed743f581c91987b74827c8415}\label{classmyfunctions_a219405ed743f581c91987b74827c8415}} 
+\index{myfunctions@{myfunctions}!parsing@{parsing}}
+\index{parsing@{parsing}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{parsing()}{parsing()}}
+{\footnotesize\ttfamily QString myfunctions\+::parsing (\begin{DoxyParamCaption}\item[{QString}]{data\+\_\+from\+\_\+client }\end{DoxyParamCaption})}
+
+
+
+Функция parsing считывает строку формата func\&username\&password\&email\&status, затем вызывает функцию и передает параметры, указанные в строке 
+
+
+\begin{DoxyEnumerate}
+\item Добавляем в список параметры, полученный разбитием строки формата func\&username\&password\&email по \&
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+from\+\_\+client,строка} & формата func\&username\&password\&email \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус вызванной функции
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item Вызываем функцию по индексу 0 и передаем необходимые параметры по индексам\+: \mbox{[}1\mbox{]} -\/ username \mbox{[}2\mbox{]} -\/ password \mbox{[}3\mbox{]} -\/ email \mbox{[}4\mbox{]} -\/ status (teacher/student \mbox{[}1\mbox{]} и \mbox{[}2\mbox{]} необходимы для функции auth \mbox{[}4\mbox{]}? \mbox{[}1\mbox{]}, \mbox{[}2\mbox{]}, \mbox{[}3\mbox{]}, \mbox{[}4\mbox{]} необходимы для функции reg 
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+from\+\_\+client} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус (полученный в результате выполнения запрашиваемой функции/\char`\"{}\+Error \char`\"{}) 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{classmyfunctions_a3a903df0338c862a7ed2320286b12546}\label{classmyfunctions_a3a903df0338c862a7ed2320286b12546}} 
+\index{myfunctions@{myfunctions}!reg@{reg}}
+\index{reg@{reg}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{reg()}{reg()}}
+{\footnotesize\ttfamily QString myfunctions\+::reg (\begin{DoxyParamCaption}\item[{QString}]{login,  }\item[{QString}]{password,  }\item[{QString}]{email,  }\item[{QString}]{status,  }\item[{QString}]{name,  }\item[{QString}]{surname }\end{DoxyParamCaption})}
+
+
+
+Функция reg отвечает за регистрацию нового пользователя 
+
+
+\begin{DoxyEnumerate}
+\item Проверка наличия логина в базе, если есть -\/ нельзя зарегистрироваться, статус = \char`\"{}\+This username is already used!\char`\"{}.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+{\em email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус регистрации
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item Проверяем добавление в базу данных пользователей. Если успешно, статус = \char`\"{}\+You have been successfully registered! \char`\"{}, иначе статус = (by default) \char`\"{}\+You are not registered! \char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+{\em email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+статус регистрации (\char`\"{}\+This username is already used!\char`\"{}/\char`\"{}\+You have been successfully registered! \char`\"{}/\char`\"{}\+You are not registered! \char`\"{}) 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{classmyfunctions_a90bb8a672e2e0096bac78317c5546c46}\label{classmyfunctions_a90bb8a672e2e0096bac78317c5546c46}} 
+\index{myfunctions@{myfunctions}!updStat@{updStat}}
+\index{updStat@{updStat}!myfunctions@{myfunctions}}
+\doxysubsubsection{\texorpdfstring{updStat()}{updStat()}}
+{\footnotesize\ttfamily QString myfunctions\+::upd\+Stat (\begin{DoxyParamCaption}\item[{QString}]{login,  }\item[{QString}]{task\+\_\+num,  }\item[{QString}]{status\+\_\+of\+\_\+task }\end{DoxyParamCaption})}
+
+
+
+Функция upd\+Stat отвечает за обновление статуса решения задачи 
+
+\mbox{\hyperlink{classmyfunctions_a90bb8a672e2e0096bac78317c5546c46}{myfunctions\+::upd\+Stat}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em task\+\_\+num} & \\
+\hline
+{\em status\+\_\+of\+\_\+task} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \\
+\hline
+{\em task\+\_\+num} & \\
+\hline
+{\em status\+\_\+of\+\_\+task} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+обновляет статус задания, после его решения/не решения 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+myfunctions.\+h\item 
+myfunctions.\+cpp\end{DoxyCompactItemize}

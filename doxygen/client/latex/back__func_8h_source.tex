@@ -1,0 +1,41 @@
+\hypertarget{back__func_8h_source}{}\doxysection{back\+\_\+func.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BACK\_FUNC\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BACK\_FUNC\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}client.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QtNetwork>}}
+\DoxyCodeLine{11 \textcolor{keywordtype}{void} auth(QString log, QString pass);}
+\DoxyCodeLine{19 \textcolor{keywordtype}{void} reg(QString log, QString pass, QString email, QString status, QString name, QString surname);}
+\DoxyCodeLine{25 \textcolor{keywordtype}{void} upd\_stat(\textcolor{keywordtype}{int} n, QString upd);}
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} get\_log(QString name, QString surname);}
+\DoxyCodeLine{36 \textcolor{keywordtype}{void} get\_stat(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} new\_group(QString group\_num, QString n1, QString s1, QString n2, QString s2, QString n3, QString s3, QString n4, QString s4,}
+\DoxyCodeLine{60                QString n5, QString s5, QString n6, QString s6, QString n7, QString s7, QString n8, QString s8,}
+\DoxyCodeLine{61                QString n9, QString s9);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68 QVector<QString> solve\_task1(QString input);}
+\DoxyCodeLine{74 QVector<QString> solve\_task2(QString input);}
+\DoxyCodeLine{80 QVector<QString> solve\_task3(QString input);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{88 QString gen\_text\_for\_task1(QString input);}
+\DoxyCodeLine{94 QString gen\_text\_for\_task2(QString input);}
+\DoxyCodeLine{100 QString gen\_text\_for\_task3(QString input);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{106 QString gen\_task1();}
+\DoxyCodeLine{111 QString gen\_task2();}
+\DoxyCodeLine{116 QString gen\_task3();}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{bool} check\_task(\textcolor{keywordtype}{int} task\_num, QVector<QString> ans, QString input);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{130 \textcolor{keywordtype}{void} check\_access(QString group\_num);}
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} get\_info(QString group);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{void} get\_student();}
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} get\_teacher();}
+\DoxyCodeLine{148 \textcolor{keywordtype}{void} get\_group();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BACK\_FUNC\_H}}
+
+\end{DoxyCode}

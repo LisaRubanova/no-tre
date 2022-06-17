@@ -165,7 +165,13 @@ QString myfunctions::reg(QString login, QString password, QString email, QString
 
     return stat;
 }
-
+/**
+ * @brief myfunctions::updStat
+ * @param login
+ * @param task_num
+ * @param status_of_task
+ * @return обновляет статус задания, после его решения/не решения
+ */
 QString myfunctions::updStat(QString login, QString task_num, QString status_of_task){
     singleton_db *db = singleton_db::getInstance();
     QSqlQuery query;
@@ -202,7 +208,11 @@ QString myfunctions::updStat(QString login, QString task_num, QString status_of_
     }
     return "Status probably has been updated";
 }
-
+/**
+ * @brief myfunctions::get_stat
+ * @param task_num
+ * @return возвращает статус задания для отображения статистики
+ */
 QString myfunctions::get_stat (QString task_num){
     singleton_db *db = singleton_db::getInstance();
     QSqlQuery query;
@@ -245,7 +255,12 @@ QString myfunctions::get_stat (QString task_num){
 }
 
 //encrypting function and decrypting
-
+/**
+ * @brief myfunctions::encrypt
+ * @param toEncrypt
+ * @param key
+ * @return зашифрованные данные
+ */
 QString myfunctions::encrypt(QString toEncrypt, quint32 key){
     //quint32 key = 562;
     QByteArray arr(toEncrypt.toUtf8());
@@ -254,7 +269,12 @@ QString myfunctions::encrypt(QString toEncrypt, quint32 key){
 
     return QString::fromLatin1(arr.toBase64());
 }
-
+/**
+ * @brief myfunctions::decrypt
+ * @param toDecrypt
+ * @param key
+ * @return расшифрованные данные
+ */
 QString myfunctions::decrypt(QString toDecrypt, quint32 key)
 {
     //quint32 key = 562;
@@ -275,7 +295,12 @@ QString myfunctions::decrypt(QString toDecrypt, quint32 key)
             get_login(list[16], list[17]), get_login(list[18], list[19]), get_login(list[20], list[21]));
     }
 */
-
+/**
+ * @brief myfunctions::get_login
+ * @param name
+ * @param surname
+ * @return расшифрованный логин по имени и фамилии
+ */
 QString myfunctions::get_login(QString name, QString surname){
     //singleton_db *db = singleton_db::getInstance();
     QString login;
@@ -296,7 +321,11 @@ QString myfunctions::get_login(QString name, QString surname){
         qDebug()<< "login!!!! = " << login  << decrypt(login,1017)<< "\n";
     return decrypt(login,1017);
 }
-
+/**
+ * @brief myfunctions::get_info
+ * @param group
+ * @return возвращает статистику для учителя: имя, фамилия и статус заданий
+ */
 QString myfunctions::get_info(QString group){
     singleton_db *db = singleton_db::getInstance();
     QString px, p1, p2, p3, p4, p5, p6, p7, p8, p9, status, name, surname, t1, t2, t3;
@@ -381,7 +410,11 @@ QString myfunctions::get_info(QString group){
 
     return status;
 }
-
+/**
+ * @brief myfunctions::check_student
+ * @param login
+ * @return отвечает есть ли такой студент уже и является ли этот логин студентом
+ */
 QString myfunctions::check_student(QString login){
     QString gr, st;
     QString status = "ok";
@@ -424,6 +457,21 @@ QString myfunctions::check_student(QString login){
 }
 
 //в группу добавляются логины
+/**
+ * @brief myfunctions::add_group
+ * @param group_num
+ * @param log_p1 - логин ученика
+ * @param log_p2 - логин ученика
+ * @param log_p3
+ * @param log_p4
+ * @param log_p5
+ * @param log_p6
+ * @param log_p7
+ * @param log_p8
+ * @param log_p9 - логин ученика
+ * @param teacher
+ * @return создание группы и добавление в группу логины
+ */
 QString myfunctions::add_group(QString group_num, QString log_p1, QString log_p2, QString log_p3,
                                QString log_p4, QString log_p5, QString log_p6, QString log_p7,
                                QString log_p8, QString log_p9, QString teacher){
@@ -481,7 +529,11 @@ QString myfunctions::add_group(QString group_num, QString log_p1, QString log_p2
 
     return status;
 }
-
+/**
+ * @brief myfunctions::check_access
+ * @param group_num
+ * @return ответ о том, есть ли у преподавателя доступ к этой группе
+ */
 QString myfunctions::check_access(QString group_num){
     singleton_db *db = singleton_db::getInstance();
     //qDebug() << teacher << group_num;
@@ -504,7 +556,10 @@ QString myfunctions::check_access(QString group_num){
     }
     return status;
 }
-
+/**
+ * @brief myfunctions::get_student для статистики студента
+ * @return возвращает имя и фамилию студента
+ */
 QString myfunctions::get_student(){
     singleton_db *db = singleton_db::getInstance();
     QString name_from_db, surname_from_db;
@@ -524,7 +579,10 @@ QString myfunctions::get_student(){
     qDebug() << "get_student" << status;
     return status;
 }
-
+/**
+ * @brief myfunctions::get_teacher для статистики студента
+ * @return возвращает имя и фамилию преподавателя
+ */
 QString myfunctions::get_teacher(){
     singleton_db *db = singleton_db::getInstance();
     QString log_teacher_from_db, teacherName_from_db, teacherSurname_from_db;
@@ -555,7 +613,10 @@ QString myfunctions::get_teacher(){
     qDebug() << "get_teacher" << status;
     return status;
 }
-
+/**
+ * @brief myfunctions::get_group для статистики студента
+ * @return возвращает номер группы
+ */
 QString myfunctions::get_group(){
     singleton_db *db = singleton_db::getInstance();
     QString group_from_db;
@@ -597,7 +658,7 @@ QString myfunctions::parsing(QString data_from_client){
     //QString student_name = "";
     //QString teacher_name = "";
 
-    QStringList list = data_from_client.split("&", QString::SplitBehavior::SkipEmptyParts);
+    QStringList list = data_from_client.split("&", Qt::SkipEmptyParts);
     //2.
     if (list[0] == "auth"){
         /*if (auth(list[1], list[2]) == "Welcome! student"){

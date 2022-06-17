@@ -26,7 +26,6 @@ void reg(QString log, QString pass, QString email, QString status, QString name,
     QString res = "reg&" + log + "&" + pass + "&" + email + "&" + status + "&" + name + "&" + surname + "&";
     qDebug() << res;
     client::getInstance()->sendToServer(res);
-
 }
 
 /**
@@ -39,14 +38,21 @@ void upd_stat(int n, QString upd){
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief get_stat вывод статуса в кабинете пользователя
+ * @param n - количество набранных баллов
+ */
 void get_stat(int n){
     QString res = "getStat&" + QString::number(n) + "&";
     //here
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief get_log вывод данных пользователя
+ * @param name
+ * @param surname
+ */
 void get_log(QString name, QString surname){
     QString res = "get_log&" + name + "&" + surname + "&";
     qDebug() << res;
@@ -54,6 +60,28 @@ void get_log(QString name, QString surname){
 }
 
 //&resol&group_num&n1&s1&n2&s2&n3&s3&n4&s4&n5&s5&n6&s6&n7&s7&n8&s8&n9&s9&t_name&t_surname&
+/**
+ * @brief new_group добавление группы
+ * @param group_num
+ * @param n1 - Имя
+ * @param s1 - Фамилия
+ * @param n2
+ * @param s2
+ * @param n3
+ * @param s3
+ * @param n4
+ * @param s4
+ * @param n5
+ * @param s5
+ * @param n6
+ * @param s6
+ * @param n7
+ * @param s7
+ * @param n8
+ * @param s8
+ * @param n9
+ * @param s9
+ */
 void new_group(QString group_num, QString n1, QString s1, QString n2, QString s2, QString n3, QString s3, QString n4, QString s4,
                QString n5, QString s5, QString n6, QString s6, QString n7, QString s7, QString n8, QString s8,
                QString n9, QString s9){
@@ -63,13 +91,19 @@ void new_group(QString group_num, QString n1, QString s1, QString n2, QString s2
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief check_access проверка доступа преподавателя к группе
+ * @param group_num
+ */
 void check_access(QString group_num){
     QString res = "check_access&" + group_num + "&";
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief get_info получение информации по группе
+ * @param group
+ */
 void get_info(QString group){
     QString res = "get_info&" + group + "&";
     qDebug() << res;
@@ -77,19 +111,25 @@ void get_info(QString group){
 
     //return res;
 }
-
+/**
+ * @brief get_student получение инфрмации о студенте
+ */
 void get_student(){
     QString res = "get_student&";
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief get_teacher получение информации о преподавателе
+ */
 void get_teacher(){
     QString res = "get_teacher&";
     qDebug() << res;
     client::getInstance()->sendToServer(res);
 }
-
+/**
+ * @brief get_group получение номера группы
+ */
 void get_group(){
     QString res = "get_group&";
     qDebug() << res;

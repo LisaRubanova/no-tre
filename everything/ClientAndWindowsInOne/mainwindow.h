@@ -20,7 +20,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    /**
+     * @brief MainWindow конструктор, открытие формы
+     * @param parent
+     */
     MainWindow(QWidget *parent = nullptr);
+    /**
+     * @brief закрытие формы
+     */
     ~MainWindow();
 
 private slots:
@@ -58,23 +65,68 @@ private slots:
      */
     void on_actionTask3_triggered();
 
+    /**
+     * @brief on_pushButton_stat_clicked переход к статистике
+    */
     void on_pushButton_stat_clicked();
+    /**
+     * @brief change_color_button_1 изменение цвета кнопки на зеленый для задания 1
+     */
     void change_color_button_1();
+    /**
+     * @brief change_color_button_2 изменение цвета кнопки на зеленый для задания 2
+     */
     void change_color_button_2();
+    /**
+     * @brief change_color_button_3 изменение цвета кнопки на зеленый для задания 3
+     */
     void change_color_button_3();
 
+    /**
+     * @brief n_change_color_button_1 изменение цвета кнопки на красный для задания 1
+     */
     void n_change_color_button_1();
+    /**
+     * @brief n_change_color_button_2 изменение цвета кнопки на красный для задания 2
+     */
     void n_change_color_button_2();
+    /**
+     * @brief n_change_color_button_3 изменение цвета кнопки на красный для задания 3
+     */
     void n_change_color_button_3();
     //void check_show();
+    /**
+     * @brief s1 постепенное формирование полной статистики
+     */
     void s1();
+    /**
+     * @brief s2 постепенное формирование полной статистики
+     */
     void s2();
+    /**
+     * @brief ny1 постепенное формирование полной статистики
+     */
     void ny1();
+    /**
+     * @brief ny2 постепенное формирование полной статистики
+     */
     void ny2();
+    /**
+     * @brief n_s1 постепенное формирование полной статистики
+     */
     void n_s1();
+    /**
+     * @brief n_s2 постепенное формирование полной статистики
+     */
     void n_s2();
 
+    /**
+     * @brief teacher формирует основное окно для преподавателя
+     */
     void teacher();
+    /**
+     * @brief student формирует основное окно для студента
+     */
     void student();
 
     void on_pushButton_new_group_clicked();

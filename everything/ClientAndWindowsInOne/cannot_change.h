@@ -12,7 +12,14 @@ class cannot_change : public QWidget
     Q_OBJECT
 
 public:
+    /**
+     * @brief cannot_change::cannot_change конструктор, открытие формы предупреждения
+     * @param parent
+     */
     explicit cannot_change(QWidget *parent = nullptr);
+    /**
+     * @brief cannot_change::~cannot_change деструктор, закрытие формы
+     */
     ~cannot_change();
 
 private:

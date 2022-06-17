@@ -12,7 +12,14 @@ class not_allowed : public QWidget
     Q_OBJECT
 
 public:
+    /**
+     * @brief not_allowed конструктор, созданеи формы
+     * @param parent
+     */
     explicit not_allowed(QWidget *parent = nullptr);
+    /**
+     * @brief закрытие формы
+     */
     ~not_allowed();
 
 private:

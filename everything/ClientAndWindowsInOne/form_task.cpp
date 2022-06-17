@@ -10,7 +10,6 @@ Form_task::Form_task(QWidget *parent) :
     ui(new Ui::Form_task)
 {
     ui->setupUi(this);
-
 }
 
 /**
@@ -24,7 +23,6 @@ Form_task::~Form_task()
 /**
  * @brief переход к проверке задания из формы задания
  */
-
 void Form_task::clear_all(){
     ui->checkBox_000->setChecked(false);
     ui->checkBox_001->setChecked(false);
@@ -35,7 +33,9 @@ void Form_task::clear_all(){
     ui->checkBox_110->setChecked(false);
     ui->checkBox_111->setChecked(false);
 }
-
+/**
+ * @brief Form_task::on_pushButton_ok_clicked заполнение вектора ответами пользователя и последующая проверка
+ */
 void Form_task::on_pushButton_ok_clicked()
 {
     QVector<QString> answer;
@@ -83,7 +83,10 @@ void Form_task::on_pushButton_ok_clicked()
     clear_all();
     hide();
 }
-
+/**
+ * @brief Form_task::set_variants банк вариантов ответов
+ * @param n - номер задания
+ */
 void Form_task::set_variants(int n){
     switch(n){
     case 1:

@@ -1,0 +1,73 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}client.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}authform.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}add\_group.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}form\_task.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}form\_statistic.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}form\_statistic\_teacher.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}wrong\_credentials.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}cannot\_change.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}}; \}}
+\DoxyCodeLine{16 QT\_END\_NAMESPACE}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     Q\_OBJECT}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} on\_pushButton\_task1\_clicked();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} on\_pushButton\_task2\_clicked();}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} on\_pushButton\_task3\_clicked();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} on\_pushButton\_exit\_clicked();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} on\_actionExit\_2\_triggered();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} on\_actionTask1\_triggered();}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} on\_actionTask2\_triggered();}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} on\_actionTask3\_triggered();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} on\_pushButton\_stat\_clicked();}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} change\_color\_button\_1();}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} change\_color\_button\_2();}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} change\_color\_button\_3();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} n\_change\_color\_button\_1();}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} n\_change\_color\_button\_2();}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} n\_change\_color\_button\_3();}
+\DoxyCodeLine{97     \textcolor{comment}{//void check\_show();}}
+\DoxyCodeLine{101 \textcolor{comment}{}    \textcolor{keywordtype}{void} s1();}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} s2();}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} ny1();}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} ny2();}
+\DoxyCodeLine{117     \textcolor{keywordtype}{void} n\_s1();}
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} n\_s2();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} teacher();}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} student();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordtype}{void} on\_pushButton\_new\_group\_clicked();}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{keyword}{private}:}
+\DoxyCodeLine{138     Ui::MainWindow *ui;}
+\DoxyCodeLine{142     \mbox{\hyperlink{class_auth_form}{AuthForm}} *auth\_f;}
+\DoxyCodeLine{146     \mbox{\hyperlink{class_form__task}{Form\_task}} *task\_f;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \mbox{\hyperlink{classform__statistic}{form\_statistic}} *stat\_f;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \mbox{\hyperlink{class_form__statistic__teacher}{Form\_statistic\_teacher}} * stat\_t;}
+\DoxyCodeLine{151     \mbox{\hyperlink{classadd__group}{add\_group}} *n\_group;}
+\DoxyCodeLine{152 \};}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+
+\end{DoxyCode}
